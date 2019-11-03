@@ -1,0 +1,24 @@
+.header__container {
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: cornflowerblue;
+}
+
+.header__container-title {
+  font-family: serif;
+  margin-left: 20px;
+  font-size: 32px;
+}
+
+@media (min-width: 900px) {
+  .header__container {
+    height: 50px;
+  }
+
+  .header__container-title {
+    font-size: 24px;
+  }
+}

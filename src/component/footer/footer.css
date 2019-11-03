@@ -1,0 +1,30 @@
+.footer__container {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: dimgrey;
+  flex: 0 0 auto;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+.footer__container-sourse-text {
+  font-family: serif;
+  margin-right: 10px;
+}
+
+.footer__container-news-api-link {
+  margin-right: 10px;
+  font-family: serif;
+}
+
+@media (min-width: 900px) {
+  .footer__container {
+    height: 50px;
+    flex-direction: row;
+    font-size: 18px;
+    justify-content: flex-end;
+  }
+}

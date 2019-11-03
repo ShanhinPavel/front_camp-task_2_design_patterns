@@ -1,0 +1,6 @@
+.news__container {
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
