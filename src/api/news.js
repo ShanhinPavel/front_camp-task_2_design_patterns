@@ -10,7 +10,7 @@ export const getNewsArticles = (
   pageNumber = PAGE_NUMBER,
   pageSize = PAGE_SIZE
 ) => {
-  const url = `${URL}?category=${category}&page=${pageNumber}&pageSize=${pageSize}&apiKey=${API_KEY}`;
+  const url = `${URL}?catgory=${category}&page=${pageNumber}&pageSize=${pageSize}&apiKey=${API_KEY}`;
 
   return loggedRequest(url);
 };
