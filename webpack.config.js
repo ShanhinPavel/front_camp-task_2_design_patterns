@@ -8,11 +8,11 @@ module.exports = {
 
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, 'public/')
+    path: path.resolve(__dirname, 'dist/')
   },
   stats: 'errors-only',
   devServer: {
-    contentBase: path.join(__dirname, 'public/'),
+    contentBase: path.join(__dirname, 'dist/'),
     compress: true,
     port: 9000
   },
@@ -36,7 +36,12 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public/index.html')
+      meta: {
+        viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+      },
+      base: {
+        id: 'root'
+      }
     })
   ],
   devtool: 'cheap-source-map'

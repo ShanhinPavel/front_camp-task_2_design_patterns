@@ -9,20 +9,10 @@ import {
   News
 } from './component';
 
-const ROOT_ELEMENT_ID = 'root';
-
 window.onload = () => {
   const app = new Controller(
     new Model(),
-    new View(
-      Header,
-      Footer,
-      CategorySelect,
-      Main,
-      MoreButton,
-      News,
-      ROOT_ELEMENT_ID
-    )
+    new View(Header, Footer, CategorySelect, Main, MoreButton, News)
   );
   app.view.render();
 };

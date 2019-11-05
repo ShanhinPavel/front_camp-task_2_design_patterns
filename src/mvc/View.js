@@ -1,16 +1,17 @@
 import { getElementById } from '../helpers/get-element-by-id';
 import { NewsSection } from '../component';
 import { getNodesCollection } from '../helpers/get-nodes-collection';
+import { createElement } from '../helpers/create-element';
 
 export class View {
-  constructor(header, footer, select, main, moreButton, news, rootElementId) {
+  constructor(header, footer, select, main, moreButton, news) {
     this.header = header;
     this.main = main;
     this.footer = footer;
     this.select = select;
     this.moreButton = moreButton;
     this.news = news;
-    this.app = getElementById(rootElementId);
+    this.app = createElement('div', { id: 'root' });
     this.pageNumber = 1;
   }
 
@@ -52,5 +53,6 @@ export class View {
     this.moreButton.style.display = 'none';
     this.main.append(this.select, this.news, this.moreButton);
     this.app.append(this.header, this.main, this.footer);
+    document.body.append(this.app);
   }
 }

@@ -1,5 +1,6 @@
 import { createElement } from '../../helpers/create-element';
 import { getElementById } from '../../helpers/get-element-by-id';
+import styles from './pop-up.css';
 
 export class PopUp {
   constructor(appContainerId) {
