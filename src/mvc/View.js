@@ -1,4 +1,3 @@
-import { getElementById } from '../helpers/get-element-by-id';
 import { NewsSection } from '../component';
 import { getNodesCollection } from '../helpers/get-nodes-collection';
 import { createElement } from '../helpers/create-element';
@@ -37,6 +36,11 @@ export class View {
     }
   }
 
+  async showErrorNotification(error) {
+    const { popUp } = await import('../component/pop-up/pop-up');
+    popUp.render();
+  }
+
   bindEventListenerToShowMoreButton(handler) {
     this.moreButton.addEventListener('click', event => {
       handler(this.select.value);
@@ -45,6 +49,12 @@ export class View {
 
   bindEventListenerToSelectCategory(handler) {
     this.select.addEventListener('change', event => {
+      handler(event.target.value);
+    });
+  }
+
+  bindEventListenerToShowErrorNotification(handler) {
+    this.select.addEventListener('', event => {
       handler(event.target.value);
     });
   }

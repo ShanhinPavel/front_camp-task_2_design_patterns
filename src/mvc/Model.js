@@ -1,4 +1,4 @@
-import { getNewsArticles } from '../api/article';
+import { NewsAPI } from '../api';
 import { checkIsShowMoreButton } from '../helpers/check-Is-show-more-button';
 
 export class Model {
@@ -18,8 +18,9 @@ export class Model {
       this.pageNumber = 1;
       this.newsArticles.length = 0;
     }
+
     try {
-      const { articles, totalResults } = await getNewsArticles(
+      const { articles, totalResults } = await NewsAPI.getNewsArticles(
         this.category,
         this.pageNumber
       );
@@ -31,10 +32,15 @@ export class Model {
       );
     } catch (error) {
       this.error = true;
+      this.occureError(this.error);
     }
   }
 
   bindNewsListChanged(callback) {
     this.newsListChanged = callback;
+  }
+
+  bindOccureError(callback) {
+    this.occureError = callback;
   }
 }

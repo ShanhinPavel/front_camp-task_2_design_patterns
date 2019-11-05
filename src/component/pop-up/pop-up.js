@@ -2,7 +2,7 @@ import { createElement } from '../../helpers/create-element';
 import { getElementById } from '../../helpers/get-element-by-id';
 import styles from './pop-up.css';
 
-export class PopUp {
+class PopUp {
   constructor(appContainerId) {
     this.appContainer = getElementById(appContainerId);
     this.popUpContainer = createElement('div', { cass: 'pop-up__container' });
@@ -14,14 +14,17 @@ export class PopUp {
     });
     this.popUpMessage = createElement(
       'p',
-      { class: 'pop-up__container-message-container' },
+      { class: 'pop-up__container-message-container-message' },
       'Something went wrong'
     );
     this.popUpCloseButton = createElement(
       'button',
-      { class: 'pop-up__container-button-container' },
+      { class: 'pop-up__container-button-container-button' },
       'x'
     );
+    this.popUpCloseButton.addEventListener('click', () => {
+      this.popUpContainer.remove();
+    });
   }
 
   render(textMessage) {
@@ -38,3 +41,5 @@ export class PopUp {
     this.appContainer.append(this.popUpContainer);
   }
 }
+
+export const popUp = new PopUp('root');
