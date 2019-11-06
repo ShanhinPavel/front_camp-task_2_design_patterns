@@ -1,31 +1,31 @@
-import { createElement } from '../../helpers/create-element';
-import './pop-up.css';
+import { createElement } from '../../../helpers';
+import './error-notification.css';
 
-class PopUp {
+class ErrorNotification {
   constructor() {
-    if (typeof PopUp.instance === 'object') {
-      return PopUp.instance;
+    if (typeof ErrorNotification.instance === 'object') {
+      return ErrorNotification.instance;
     }
-    PopUp.instance = this;
+    ErrorNotification.instance = this;
     return this;
   } 
   
   render() {
-    this.popUpContainer = createElement('div', { class: 'pop-up__container' });
+    this.popUpContainer = createElement('div', { class: 'error-notification__container' });
     this.messageContainer = createElement('div', {
-      class: 'pop-up__container-message-container'
+      class: 'error-notification__container-message-container'
     });
     this.closeButtonContainer = createElement('div', {
-      class: 'pop-up__container-button-container'
+      class: 'error-notification__container-button-container'
     });
     this.popUpMessage = createElement(
       'p',
-      { class: 'pop-up__container-message-container-message' },
+      { class: 'error-notification__container-message-container-message' },
       'Downloading error. Please try again.'
     );
     this.popUpCloseButton = createElement(
       'p',
-      { class: 'pop-up__container-button-container-button' },
+      { class: 'error-notification__container-button-container-button' },
       'x'
     );
     this.popUpCloseButton.addEventListener('click', () => {
@@ -43,4 +43,4 @@ class PopUp {
   }
 }
 
-export const popUp = new PopUp();
+export const errorNotification = new ErrorNotification();

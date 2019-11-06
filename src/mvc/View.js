@@ -1,6 +1,5 @@
 import { NewsSection } from '../component';
-import { getNodesCollection } from '../helpers/get-nodes-collection';
-import { createElement } from '../helpers/create-element';
+import { getNodesCollection, createElement } from '../helpers';
 
 export class View {
   constructor(header, footer, select, main, moreButton, news) {
@@ -18,14 +17,21 @@ export class View {
     return this.select.value;
   }
 
-  displayNews(newsArticles, showMoreButton) {
+  async displayNews(newsArticles, showMoreButton) {
     while (this.news.firstElementChild) {
       this.news.removeChild(this.news.firstElementChild);
     }
 
-    const news = getNodesCollection(NewsSection, newsArticles);
-    this.news.append(...news);
-    this.showMoreButton(showMoreButton);
+    if (!newsArticles.length) {
+      const {message} = await import('../component')
+      const noCategoryNewsMessage = message.render();
+      this.news.append(noCategoryNewsMessage)
+      this.showMoreButton(false);
+    } else {
+      const news = getNodesCollection(NewsSection, newsArticles);
+      this.news.append(...news);
+      this.showMoreButton(showMoreButton);
+    }
   }
 
   showMoreButton(showMoreButton) {
@@ -37,8 +43,8 @@ export class View {
   }
 
   async showErrorNotification(error) {
-    const { popUp } = await import('../component/pop-up/pop-up');
-    const notification = popUp.render();
+    const { errorNotification } = await import('../component');
+    const notification = errorNotification.render();
     this.app.append(notification);
   }
 

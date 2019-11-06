@@ -1,4 +1,4 @@
-import { createElement } from '../../helpers/create-element';
+import { createElement } from '../../helpers';
 import './header.css';
 
 export const getHeader = () => {

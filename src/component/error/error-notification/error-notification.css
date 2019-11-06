@@ -1,4 +1,4 @@
-.pop-up__container {
+.error-notification__container {
   width: 300px;
   height: 80px;
   
@@ -12,7 +12,7 @@
   background-color: aliceblue
 }
 
-.pop-up__container-message-container {
+.error-notification__container-message-container {
   height: inherit;
   width: 100%;
   display: flex;
@@ -20,25 +20,25 @@
   align-items: center;
 }
 
-.pop-up__container-message-container-message {
+.error-notification__container-message-container-message {
   font-size: 20px;
   padding: 10px;
   margin: 0 auto;
 }
 
-.pop-up__container-button-container {
+.error-notification__container-button-container {
   width: inherit;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   width: 35%;
   justify-content: center;
-  background-color: red;
+  background-color: brown;
   border-radius: 0 5px  5px 0;
   cursor: pointer;
 }
 
-.pop-up__container-button-container-button {
+.error-notification__container-button-container-button {
   width: inherit;
   text-align: center;
   font-size: 32px;
@@ -50,7 +50,7 @@
 
 
 @media screen and (min-width: 500px) {
-  .pop-up__container {
+  .error-notification__container {
     height: 80px;
     
   }

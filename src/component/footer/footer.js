@@ -1,4 +1,4 @@
-import { createElement } from '../../helpers/create-element';
+import { createElement } from '../../helpers';
 import './footer.css';
 
 const NEWS_SOURCE = 'News in this application are got from';

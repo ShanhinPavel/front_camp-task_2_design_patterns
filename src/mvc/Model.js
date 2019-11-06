@@ -1,5 +1,5 @@
 import { NewsAPI } from '../api';
-import { checkIsShowMoreButton } from '../helpers/check-Is-show-more-button';
+import { checkIsShowMoreButton } from '../helpers';
 
 export class Model {
   constructor() {

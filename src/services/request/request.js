@@ -1,5 +1,4 @@
 import { httpMethods } from './http-methods';
-import { logger } from '../logger/logger';
 
 export const request = async (url, method = httpMethods.GET, data) => {
   const requestBody = {

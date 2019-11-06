@@ -13,3 +13,5 @@ export const CategorySelect = getCategorySelect();
 export const MoreButton = getShowMoreButton();
 export const News = getNews();
 export const NewsSection = createNewsSection;
+export {message} from './message'
+export {errorNotification} from './error'
