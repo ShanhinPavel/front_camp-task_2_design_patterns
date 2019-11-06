@@ -38,7 +38,8 @@ export class View {
 
   async showErrorNotification(error) {
     const { popUp } = await import('../component/pop-up/pop-up');
-    popUp.render();
+    const notification = popUp.render();
+    this.app.append(notification);
   }
 
   bindEventListenerToShowMoreButton(handler) {

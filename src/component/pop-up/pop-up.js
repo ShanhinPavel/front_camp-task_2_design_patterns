@@ -1,10 +1,16 @@
 import { createElement } from '../../helpers/create-element';
-import { getElementById } from '../../helpers/get-element-by-id';
-import styles from './pop-up.css';
+import './pop-up.css';
 
 class PopUp {
-  constructor(appContainerId) {
-    this.appContainer = getElementById(appContainerId);
+  constructor() {
+    if (typeof PopUp.instance === 'object') {
+      return PopUp.instance;
+    }
+    PopUp.instance = this;
+    return this;
+  }
+
+  render() {
     this.popUpContainer = createElement('div', { cass: 'pop-up__container' });
     this.messageContainer = createElement('div', {
       class: 'pop-up__container-message-container'
@@ -15,7 +21,7 @@ class PopUp {
     this.popUpMessage = createElement(
       'p',
       { class: 'pop-up__container-message-container-message' },
-      'Something went wrong'
+      'Downloading error. Please try again.'
     );
     this.popUpCloseButton = createElement(
       'button',
@@ -25,12 +31,6 @@ class PopUp {
     this.popUpCloseButton.addEventListener('click', () => {
       this.popUpContainer.remove();
     });
-  }
-
-  render(textMessage) {
-    if (textMessage) {
-      this.popUpMessage.textContent = textMessage;
-    }
 
     this.messageContainer.append(this.popUpMessage);
     this.closeButtonContainer.append(this.popUpCloseButton);
@@ -38,8 +38,9 @@ class PopUp {
       this.closeButtonContainer,
       this.messageContainer
     );
-    this.appContainer.append(this.popUpContainer);
+
+    return this.popUpContainer;
   }
 }
 
-export const popUp = new PopUp('root');
+export const popUp = new PopUp();

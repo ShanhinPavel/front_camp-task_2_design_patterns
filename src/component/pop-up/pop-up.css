@@ -1,8 +1,12 @@
 .pop-up__container {
-  width: 100%;
+  width: 50%;
   height: 50px;
   border: 1px solid black;
   border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  z-index: 100;
 }
 
 .pop-up__container-button-container {
