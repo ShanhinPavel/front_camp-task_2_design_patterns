@@ -1,26 +1,15 @@
 .pop-up__container {
-  width: 50%;
-  height: 50px;
-  border: 1px solid black;
-  border-radius: 2px;
+  width: 300px;
+  height: 80px;
+  
+  border-radius: 10px;
   position: absolute;
   right: 10px;
   bottom: 20px;
   z-index: 100;
-}
-
-.pop-up__container-button-container {
-  width: inherit;
+  border-radius: 5px;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-
-.pop-up__container-button-container-button {
-  width: 23px;
-  height: 23px;
-  border: 1px solid black;
-  border-radius: 1px;
+  background-color: aliceblue
 }
 
 .pop-up__container-message-container {
@@ -32,12 +21,37 @@
 }
 
 .pop-up__container-message-container-message {
-  font-size: 16px;
+  font-size: 20px;
   padding: 10px;
+  margin: 0 auto;
 }
+
+.pop-up__container-button-container {
+  width: inherit;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 35%;
+  justify-content: center;
+  background-color: red;
+  border-radius: 0 5px  5px 0;
+  cursor: pointer;
+}
+
+.pop-up__container-button-container-button {
+  width: inherit;
+  text-align: center;
+  font-size: 32px;
+  margin: 0;
+  font-family: Arial;
+  color: lightgrey
+}
+
+
 
 @media screen and (min-width: 500px) {
   .pop-up__container {
-    width: 20%;
+    height: 80px;
+    
   }
 }

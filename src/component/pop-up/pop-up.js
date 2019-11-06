@@ -8,10 +8,10 @@ class PopUp {
     }
     PopUp.instance = this;
     return this;
-  }
-
+  } 
+  
   render() {
-    this.popUpContainer = createElement('div', { cass: 'pop-up__container' });
+    this.popUpContainer = createElement('div', { class: 'pop-up__container' });
     this.messageContainer = createElement('div', {
       class: 'pop-up__container-message-container'
     });
@@ -24,7 +24,7 @@ class PopUp {
       'Downloading error. Please try again.'
     );
     this.popUpCloseButton = createElement(
-      'button',
+      'p',
       { class: 'pop-up__container-button-container-button' },
       'x'
     );
@@ -35,8 +35,8 @@ class PopUp {
     this.messageContainer.append(this.popUpMessage);
     this.closeButtonContainer.append(this.popUpCloseButton);
     this.popUpContainer.append(
-      this.closeButtonContainer,
-      this.messageContainer
+      this.messageContainer,
+      this.closeButtonContainer
     );
 
     return this.popUpContainer;
