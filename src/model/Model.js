@@ -1,9 +1,9 @@
-import { NewsAPI } from '../api';
-import { checkIsShowMoreButton } from '../helpers';
+import { NewsAPI } from "../api";
+import { checkIsShowMoreButton } from "../helpers";
 
-export class Model {
+class Model {
   constructor() {
-    this.category = '';
+    this.category = "";
     this.pageNumber = 1;
     this.totalResults = 0;
     this.newsArticles = [];
@@ -44,3 +44,5 @@ export class Model {
     this.occureError = callback;
   }
 }
+
+export const model = new Model();

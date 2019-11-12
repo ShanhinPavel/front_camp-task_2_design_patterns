@@ -1,18 +1,9 @@
-import './index.css';
-import { Controller, Model, View } from './mvc';
-import {
-  Footer,
-  Header,
-  Main,
-  CategorySelect,
-  MoreButton,
-  News
-} from './component';
+import "./index.css";
+import { Controller } from "./controller";
+import { model } from "./model";
+import { view } from "./view";
 
 window.onload = () => {
-  const app = new Controller(
-    new Model(),
-    new View(Header, Footer, CategorySelect, Main, MoreButton, News)
-  );
+  const app = new Controller(model, view);
   app.view.render();
 };
